@@ -1,0 +1,20 @@
+$(document).ready(function(){
+	$('.submit').click(function(){
+		$.ajax({
+			type:'POST',
+			url:'../contact.php',
+			async:true,
+			data:{
+				names:$('#names').val(),
+				emails:$('#emails').val(),
+				msgs:$('#msgs').val()
+			},
+			success:function(result)
+			{
+				//console.log(result);
+			}
+		});
+		alert("Thank you for contacting us");
+		location.reload();
+	});
+});
